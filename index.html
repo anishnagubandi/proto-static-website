@@ -34,7 +34,7 @@
     <section class="card">
       <h2>Stay Updated</h2>
       <p>If you are interested in our progress and want to be the first to know when we launch, subscribe below.</p>
-      <a href="page2.html" class="subscribe-btn">Subscribe Now</a>
+      <button class="subscribe-btn" onclick="openModal()">Subscribe Now</button>
     </section>
 
     <!-- Section 3 & 4: Willingness to pay -->
@@ -61,17 +61,49 @@
 
   </main>
 
+  <!-- Lead-capture modal -->
+  <div id="formModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Lead capture form">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfYb9RLltQAmqs58NLDtNL8ax085a2fYST5awW8abXfJuf17w/viewform?embedded=true"
+        width="100%"
+        height="520"
+        title="Interest form"
+        style="border:none;"
+      >Loading&hellip;</iframe>
+    </div>
+  </div>
+
   <footer>
     &copy; 2024 Recovery Supervision Service &mdash; All rights reserved.
   </footer>
 
   <script>
+    function openModal() {
+      document.getElementById('formModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('formModal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
     function handleSubmit(event) {
       event.preventDefault();
-      document.getElementById('paymentForm').style.display = 'none';
-      var msg = document.getElementById('thankYouMsg');
-      msg.style.display = 'block';
+      openModal();
     }
+
+    // Close modal when clicking the backdrop
+    document.getElementById('formModal').addEventListener('click', function (e) {
+      if (e.target === this) closeModal();
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && document.getElementById('formModal').style.display === 'flex') closeModal();
+    });
   </script>
 
 </body>

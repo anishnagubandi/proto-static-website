@@ -129,6 +129,50 @@ footer {
   font-size: 0.85rem;
 }
 
+/* Modal overlay */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 640px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #4a5568;
+}
+
+.modal-close:hover {
+  color: #2d3748;
+}
+
+/* Subscribe button (now a <button> element) */
+.subscribe-btn {
+  cursor: pointer;
+  border: none;
+}
+
 /* Page 2 specific */
 .confirmation-icon {
   font-size: 3rem;
