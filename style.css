@@ -173,6 +173,88 @@ footer {
   border: none;
 }
 
+/* Pay and Subscribe CTA button */
+.pay-subscribe-btn {
+  display: inline-block;
+  margin-top: 1.25rem;
+  background: #2b6cb0;
+  color: #fff;
+  padding: 0.7rem 1.6rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pay-subscribe-btn:hover,
+.pay-subscribe-btn:focus-visible {
+  background: #2c5282;
+  outline: 3px solid #90cdf4;
+  outline-offset: 2px;
+}
+
+/* Bullet-point info list above the CTA */
+.cta-info-list {
+  margin: 0.75rem 0 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cta-info-list li {
+  color: #4a5568;
+  font-size: 1rem;
+}
+
+/* Modal title */
+.modal-title {
+  font-size: 1.15rem;
+  color: #2b6cb0;
+  margin-bottom: 0.75rem;
+}
+
+/* Modal confirmation strip */
+.modal-confirm {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.modal-confirm p {
+  font-size: 0.9rem;
+  color: #4a5568;
+  text-align: center;
+}
+
+.confirm-btn {
+  background: #38a169;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.confirm-btn:hover,
+.confirm-btn:focus-visible {
+  background: #276749;
+  outline: 3px solid #9ae6b4;
+  outline-offset: 2px;
+}
+
+.fallback-link {
+  font-size: 0.85rem;
+  color: #2b6cb0;
+  text-decoration: underline;
+}
+
 /* Page 2 specific */
 .confirmation-icon {
   font-size: 3rem;
