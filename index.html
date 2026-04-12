@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recovery Supervision Service</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Recovery Supervision Service</h1>
+  </header>
+
+  <main>
+
+    <!-- Section 1: Problem being solved -->
+    <section class="card">
+      <h2>The Problem We Are Solving</h2>
+      <p>
+        We are working on the following challenge for healthcare and business professionals:
+      </p>
+      <blockquote style="margin:1rem 0 0 0; padding:0.75rem 1rem; background:#ebf8ff; border-left:4px solid #2b6cb0; border-radius:4px; color:#2c5282; font-style:italic;">
+        "How might we provide a sense of active supervision for patients recovering alone
+        so that they feel confident and held accountable to their recovery timeline?"
+      </blockquote>
+      <p style="margin-top:1rem;">
+        Our service aims to bridge the gap between clinical oversight and solo recovery,
+        giving patients the support and accountability they need to recover with confidence.
+      </p>
+    </section>
+
+    <!-- Section 2: Subscribe -->
+    <section class="card">
+      <h2>Stay Updated</h2>
+      <p>If you are interested in our progress and want to be the first to know when we launch, subscribe below.</p>
+      <a href="page2.html" class="subscribe-btn">Subscribe Now</a>
+    </section>
+
+    <!-- Section 3 & 4: Willingness to pay -->
+    <section class="card">
+      <h2>Your Opinion Matters</h2>
+      <p>If you were willing to pay for this service, how much would you pay for it?</p>
+
+      <form class="payment-form" id="paymentForm" onsubmit="handleSubmit(event)">
+        <label for="paymentAmount">Enter an amount (e.g. $10/month):</label>
+        <input
+          type="text"
+          id="paymentAmount"
+          name="paymentAmount"
+          placeholder="e.g. $20/month"
+          required
+        />
+        <button type="submit">Submit</button>
+      </form>
+
+      <div class="thank-you-msg" id="thankYouMsg">
+        I am not in a state to accept a payment but thank you for considering it.
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2024 Recovery Supervision Service &mdash; All rights reserved.
+  </footer>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      document.getElementById('paymentForm').style.display = 'none';
+      var msg = document.getElementById('thankYouMsg');
+      msg.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
