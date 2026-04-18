@@ -3,18 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recovery Supervision Service</title>
+  <title>HeyBoss – Recovery Supervision Service</title>
+  <meta name="description" content="HeyBoss is a web-based medication and recovery supervision platform. Manage daily medication schedules, receive in-browser reminders, and track your progress." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header>
-    <h1>Recovery Supervision Service</h1>
+    <div class="header-inner">
+      <div class="header-logo">
+        <span class="logo-icon">💊</span>
+        <span class="logo-text">HeyBoss</span>
+      </div>
+      <h1>Recovery Supervision Service</h1>
+      <a href="https://antigravity-heyboss-5nqr.vercel.app/" target="_blank" rel="noopener noreferrer" class="live-demo-btn" id="liveDemoHeaderBtn">
+        Try Live Demo →
+      </a>
+    </div>
   </header>
 
   <main>
 
-    <!-- Section 1: Problem being solved -->
+    <!-- ── SECTION 1: Problem being solved (existing, untouched) ──────── -->
     <section class="card">
       <h2>The Problem We Are Solving</h2>
       <p>
@@ -30,11 +43,157 @@
       </p>
     </section>
 
-    <!-- Section 2 & 3: Subscribe + Pay (merged) -->
+    <!-- ── NEW: What is HeyBoss? ──────────────────────────────────────── -->
+    <section class="card card-highlight">
+      <div class="section-badge">About the Prototype</div>
+      <h2>What is HeyBoss?</h2>
+      <p>
+        HeyBoss is a <strong>web-based medication and recovery supervision platform</strong>
+        designed to help individuals — and their caregivers — manage daily medication
+        schedules during a recovery period. The app provides a clean, modern dashboard
+        where users can schedule medications, receive in-browser reminders, and track
+        their daily progress.
+      </p>
+      <a href="https://antigravity-heyboss-5nqr.vercel.app/" target="_blank" rel="noopener noreferrer" class="demo-link-pill" id="tryLiveProtoBtn">
+        🚀 Try the live prototype &rarr;
+      </a>
+    </section>
+
+    <!-- ── NEW: What the Prototype Does ──────────────────────────────── -->
+    <section class="card">
+      <div class="section-badge">Prototype Features</div>
+      <h2>What the Prototype Does</h2>
+
+      <div class="feature-grid">
+
+        <div class="feature-item">
+          <div class="feature-icon">🔐</div>
+          <div class="feature-body">
+            <h3>User Authentication</h3>
+            <ul class="feature-list">
+              <li>Register a new account with name, email, phone & password</li>
+              <li>Secure login powered by <strong>Supabase native Auth</strong> (industry-standard)</li>
+              <li>Sessions persist in the browser — stay logged in after refresh</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">📋</div>
+          <div class="feature-body">
+            <h3>Medication Scheduling</h3>
+            <ul class="feature-list">
+              <li>Manually add medications via a clean form</li>
+              <li>Each entry includes: name, time (AM/PM), frequency, and instructions</li>
+              <li>Frequency options: <em>Daily</em>, <em>Specific Date</em>, or <em>Recurring Days of week</em></li>
+              <li>Data saved to cloud database — persists across sessions and devices</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">📊</div>
+          <div class="feature-body">
+            <h3>Schedule Dashboard</h3>
+            <ul class="feature-list">
+              <li>View all active medications in a clean table</li>
+              <li>Each row: Medication Name · When · Time · Instructions</li>
+              <li>Mark a medication as <strong>Done</strong> — removes it with a celebratory animation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🔔</div>
+          <div class="feature-body">
+            <h3>In-Browser Reminders</h3>
+            <ul class="feature-list">
+              <li>Background check runs <strong>every 30 seconds</strong> against the schedule</li>
+              <li>When a medication is due: shows a notification card, plays audio, and sends a desktop push notification</li>
+              <li>Each reminder has a "Mark as Done" button to dismiss</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">⏰</div>
+          <div class="feature-body">
+            <h3>Automated Cron Reminders (Server-Side)</h3>
+            <ul class="feature-list">
+              <li>Server-side cron runs daily at <strong>6:00 AM</strong> via Vercel Cron</li>
+              <li>External cron service (cron-job.org) pings <code>/api/cron/check-meds</code> every minute</li>
+              <li>Reminders fire even when the browser tab is closed</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🚪</div>
+          <div class="feature-body">
+            <h3>Secure Logout</h3>
+            <ul class="feature-list">
+              <li>One-click logout clears the local session securely</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── NEW: Tech Stack ────────────────────────────────────────────── -->
+    <section class="card">
+      <div class="section-badge">Technology</div>
+      <h2>Technology Stack</h2>
+      <div class="stack-grid">
+        <div class="stack-chip"><span class="chip-icon">🖥️</span><span class="chip-label">Frontend</span><span class="chip-value">HTML5 · CSS3 · Vanilla JS · Vercel Static</span></div>
+        <div class="stack-chip"><span class="chip-icon">⚙️</span><span class="chip-label">Backend</span><span class="chip-value">Python · FastAPI · Vercel Serverless Functions</span></div>
+        <div class="stack-chip"><span class="chip-icon">🗄️</span><span class="chip-label">Database & Auth</span><span class="chip-value">Supabase (PostgreSQL) · Supabase Auth</span></div>
+        <div class="stack-chip"><span class="chip-icon">🤖</span><span class="chip-label">AI (Optional)</span><span class="chip-value">Google Gemini API (prescription parsing)</span></div>
+        <div class="stack-chip"><span class="chip-icon">🚀</span><span class="chip-label">Deployment</span><span class="chip-value">Vercel · GitHub (auto-deploy) · cron-job.org</span></div>
+      </div>
+    </section>
+
+    <!-- ── NEW: Architecture ──────────────────────────────────────────── -->
+    <section class="card">
+      <div class="section-badge">Architecture</div>
+      <h2>How It Fits Together</h2>
+      <div class="arch-diagram">
+        <div class="arch-row">
+          <div class="arch-node arch-browser">🌐 Browser</div>
+          <div class="arch-arrow">⟺</div>
+          <div class="arch-node arch-frontend">Vercel Static<br/><small>HTML / CSS / JS</small></div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node arch-backend">Vercel Serverless<br/><small>FastAPI / Python</small></div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node arch-db">Supabase Cloud<br/><small>PostgreSQL + Auth</small></div>
+        </div>
+        <div class="arch-cron">
+          <span class="cron-item">🕐 cron-job.org → <code>/api/cron/check-meds</code> (every minute)</span>
+          <span class="cron-item">🌅 Vercel Cron → <code>/api/cron/morning</code> (6:00 AM daily)</span>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ── NEW: What I Want to Do Next ─────────────────────────────── -->
+    <section class="card">
+      <div class="section-badge badge-green">What's Next</div>
+      <h2>What I Want to Do Next</h2>
+      <div class="roadmap-grid">
+        <div class="roadmap-item"><span class="road-icon">👨‍👩‍👧</span><div><strong>Caregiver Dashboard</strong><p>Allow a family member to monitor a patient's schedule remotely.</p></div></div>
+        <div class="roadmap-item"><span class="road-icon">📊</span><div><strong>Medication History</strong><p>View past days' adherence with charts and stats.</p></div></div>
+        <div class="roadmap-item"><span class="road-icon">💬</span><div><strong>SMS / WhatsApp Reminders</strong><p>Integrate Twilio to send alerts directly to the patient's phone.</p></div></div>
+        <div class="roadmap-item"><span class="road-icon">🤖</span><div><strong>AI Prescription Parser</strong><p>Paste a prescription and auto-generate a full schedule instantly.</p></div></div>
+        <div class="roadmap-item"><span class="road-icon">🌍</span><div><strong>Multi-Timezone Support</strong><p>Global users can set their own timezone for accurate reminders.</p></div></div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 2 & 3: Subscribe + Pay (existing, untouched) ──────── -->
     <section class="card">
       <h2>Stay Updated &amp; Share Your Opinion</h2>
       <ul class="cta-info-list">
-        <li>If you are interested in our progress and want to be the first to know when we launch and if you were willing to pay for this service, please click on the pay&subscribe button and fill the form which will be displayed.</li>
+        <li>If you are interested in our progress and want to be the first to know when we launch and if you were willing to pay for this service, please click on the pay&amp;subscribe button and fill the form which will be displayed.</li>
       </ul>
       <button
         class="pay-subscribe-btn"
@@ -57,7 +216,7 @@
 
   </main>
 
-  <!-- Lead-capture modal -->
+  <!-- Lead-capture modal (existing, untouched) -->
   <div id="formModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-container">
       <button class="modal-close" onclick="closeModal()" aria-label="Close form">&times;</button>
@@ -86,7 +245,10 @@
   </div>
 
   <footer>
-    &copy; 2024 Recovery Supervision Service &mdash; All rights reserved.
+    <div class="footer-inner">
+      <span>&copy; 2024 HeyBoss – Recovery Supervision Service &mdash; All rights reserved.</span>
+      <span class="footer-credit">Built with Antigravity AI Assistant</span>
+    </div>
   </footer>
 
   <script>
